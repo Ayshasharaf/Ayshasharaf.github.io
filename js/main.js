@@ -1,4 +1,4 @@
-/* Site entry. Load after the other js/*.js files (see index.html). */
+/* Site entry. */
 (() => {
   const { initNav, initCursor, initMotion, initProjectCases } = window.Portfolio;
   initNav();

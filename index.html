@@ -1,15 +1,4 @@
 <!DOCTYPE html>
-<!--
-  Single-page portfolio. Sections follow:
-    <section class="section" id="slug">
-      <div class="section-head">
-        <p class="kicker"><span>NN / name</span> Label</p>
-        <h2>Headline.</h2>
-      </div>
-      ...content...
-    </section>
-  Nav links must match those ids. See README.md to add content.
--->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -44,7 +33,7 @@
       </span>
     </div>
 
-    <!-- Fixed header: brand, section nav, availability -->
+    <!-- Header -->
     <header class="site-header" id="top">
       <a class="brand" href="#top">
         <span class="brand-mark" aria-hidden="true">AS</span>
@@ -71,7 +60,7 @@
     </header>
 
     <main id="main">
-      <!-- 01 About: full-bleed hero plaque -->
+      <!-- About -->
       <section class="hero" id="about">
         <div class="hero-visual">
           <div class="plaque">
@@ -103,7 +92,7 @@
         </div>
       </section>
 
-      <!-- 02 Projects: featured cards + optional archive. data-project keys live in js/projects-data.js -->
+      <!-- Projects -->
       <section class="section" id="work">
         <div class="section-head">
           <p class="kicker"><span>02 / projects</span> Selected work</p>
@@ -274,7 +263,7 @@
         </details>
       </section>
 
-      <!-- 03 Experience: full-bleed blue panel; add another <article class="job"> to extend the timeline -->
+      <!-- Experience -->
       <section class="section section-bleed" id="experience">
         <div class="experience-panel">
           <div class="experience-glow" aria-hidden="true"></div>
@@ -334,7 +323,7 @@
         </div>
       </section>
 
-      <!-- 04 Skills: one .skill-row per category -->
+      <!-- Skills -->
       <section class="section" id="skills">
         <div class="section-head">
           <p class="kicker"><span>04 / skills</span> Stack</p>
@@ -446,7 +435,7 @@
         </div>
       </section>
 
-      <!-- 05 Education -->
+      <!-- Education -->
       <section class="section" id="education">
         <div class="section-head edu-head">
           <p class="kicker"><span>05 / education</span> School</p>
@@ -536,7 +525,7 @@
         </div>
       </section>
 
-      <!-- 06 Honors -->
+      <!-- Honors -->
       <section class="section" id="honors">
         <div class="section-head">
           <p class="kicker"><span>06 / honors</span> Recognition</p>
@@ -591,7 +580,7 @@
         </div>
       </section>
 
-      <!-- 07 Certifications: stamp-tilt-* sets rotation; keep stamp-count in sync -->
+      <!-- Certifications -->
       <section class="section" id="certs">
         <div class="section-head stamp-head">
           <div>
@@ -636,7 +625,7 @@
       </section>
     </main>
 
-    <!-- 08 Contact -->
+    <!-- Contact -->
     <footer class="footer" id="contact">
       <div class="footer-glow" aria-hidden="true"></div>
       <div class="footer-mesh" aria-hidden="true"></div>
@@ -684,7 +673,7 @@
       </div>
     </footer>
 
-    <!-- Case study modal: body filled from js/projects-data.js -->
+    <!-- Project case study -->
     <dialog class="project-dialog" id="project-dialog" aria-labelledby="project-dialog-title">
       <div class="project-sheet">
         <button class="project-dialog-close" type="button" aria-label="Close project details">
