@@ -1,0 +1,23 @@
+/*
+  Entry stylesheet. Import order is the cascade — do not reorder blindly.
+
+  tokens → base → cursor → header/type → hero → projects →
+  skills → education → honors/certs → experience → footer → breakpoints
+
+  To restyle: change tokens.css.
+  To add a page section: add HTML using the section pattern in README.md,
+  then add a sibling CSS file and import it here before responsive.css.
+*/
+
+@import url("./tokens.css");
+@import url("./base.css");
+@import url("./cursor.css");
+@import url("./header.css");
+@import url("./hero.css");
+@import url("./projects.css");
+@import url("./skills.css");
+@import url("./education.css");
+@import url("./honors-certs.css");
+@import url("./experience.css");
+@import url("./footer.css");
+@import url("./responsive.css");

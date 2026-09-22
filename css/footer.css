@@ -1,0 +1,316 @@
+/* footer.css — Closing contact panel. Decorative layers sit behind .footer-inner. */
+
+.footer {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(900px 420px at 8% 0%, color-mix(in srgb, var(--blue) 42%, transparent), transparent 58%),
+    var(--navy);
+  color: var(--white);
+  padding: calc(var(--section-y) + 16px) var(--inset) 28px;
+  margin-top: 0;
+}
+
+.footer-glow {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  right: 8%;
+  bottom: -120px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--blue) 55%, transparent);
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+.footer-mesh {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--white) 8%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--white) 8%, transparent) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(180deg, var(--white), transparent 88%);
+  pointer-events: none;
+}
+
+.footer-arcs {
+  position: absolute;
+  width: 560px;
+  height: 560px;
+  right: -180px;
+  top: -200px;
+  border-radius: 50%;
+  background: repeating-radial-gradient(
+    circle at center,
+    transparent 0 18px,
+    color-mix(in srgb, var(--white) 14%, transparent) 18px 19px
+  );
+  pointer-events: none;
+  opacity: 0.55;
+  animation: footer-spin 48s linear infinite;
+}
+
+.footer-ghost {
+  position: absolute;
+  right: var(--inset);
+  bottom: 64px;
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(120px, 22vw, 280px);
+  letter-spacing: -0.08em;
+  line-height: 0.7;
+  color: color-mix(in srgb, var(--white) 6%, transparent);
+  pointer-events: none;
+  user-select: none;
+}
+
+.footer-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-top {
+  max-width: none;
+  margin: 0 0 48px;
+}
+
+.footer-top h2 {
+  margin: 14px 0 22px;
+  max-width: 12ch;
+  font-size: clamp(40px, 7vw, 84px);
+}
+
+.footer-lede {
+  color: color-mix(in srgb, var(--white) 65%, transparent);
+  max-width: 48ch;
+}
+
+.footer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 20px;
+}
+
+.footer-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--white) 22%, transparent);
+  background: color-mix(in srgb, var(--white) 6%, transparent);
+}
+
+.footer-live i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--live);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--live) 22%, transparent);
+  animation: footer-pulse 2.2s ease-out infinite;
+}
+
+.footer-places {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.footer-places li {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid color-mix(in srgb, var(--white) 16%, transparent);
+  color: color-mix(in srgb, var(--white) 78%, transparent);
+}
+
+.contact-grid {
+  max-width: none;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.contact-tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  padding: 26px 28px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border: 1px solid transparent;
+  transition:
+    transform 0.35s var(--ease-out),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.contact-tile:hover {
+  transform: translateY(-6px);
+}
+
+.tile-idx,
+.tile-go {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.tile-idx {
+  position: absolute;
+  top: 24px;
+  left: 28px;
+  opacity: 0.55;
+}
+
+.tile-go {
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  transition: transform 0.35s var(--ease-out), background 0.35s ease;
+}
+
+.contact-tile:hover .tile-go {
+  transform: translate(3px, -3px);
+}
+
+.tile-blue {
+  background:
+    radial-gradient(circle at 92% 12%, color-mix(in srgb, var(--white) 18%, transparent), transparent 38%),
+    var(--blue);
+}
+
+.tile-blue .tile-go {
+  background: color-mix(in srgb, var(--white) 14%, transparent);
+}
+
+.tile-ink {
+  background: color-mix(in srgb, var(--black) 70%, transparent);
+  border-color: color-mix(in srgb, var(--white) 16%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--white) 6%, transparent);
+}
+
+.tile-ink .tile-go {
+  background: color-mix(in srgb, var(--blue) 28%, transparent);
+  color: var(--white);
+}
+
+.contact-tile:hover.tile-blue {
+  box-shadow: 0 22px 50px color-mix(in srgb, var(--blue-deep) 45%, transparent);
+}
+
+.contact-tile:hover.tile-ink {
+  border-color: color-mix(in srgb, var(--blue) 55%, var(--white));
+  box-shadow: 0 22px 50px color-mix(in srgb, var(--ink) 35%, transparent);
+}
+
+.tile-label {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  text-transform: none;
+  opacity: 1;
+  margin-top: auto;
+  line-height: 0.95;
+}
+
+.tile-value {
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  word-break: break-word;
+}
+
+.footer-bar {
+  max-width: none;
+  margin: 48px 0 0;
+  padding-top: 22px;
+  border-top: 1px solid color-mix(in srgb, var(--white) 12%, transparent);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+  color: color-mix(in srgb, var(--white) 55%, transparent);
+}
+
+.footer-top-link {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--white) 18%, transparent);
+  color: color-mix(in srgb, var(--white) 82%, transparent);
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.footer-top-link:hover {
+  background: var(--white);
+  border-color: var(--white);
+  color: var(--navy);
+}
+
+@keyframes footer-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes footer-pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--live) 40%, transparent);
+  }
+  70% {
+    box-shadow: 0 0 0 8px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+html.has-motion .plaque-top,
+html.has-motion .plaque-copy h1,
+html.has-motion .plaque-copy p,
+html.has-motion .hero-actions,
+html.has-motion .plaque-year,
+html.has-motion .section-head > *,
+html.has-motion .project,
+html.has-motion .job,
+html.has-motion .skill-row,
+html.has-motion .edu-city,
+html.has-motion .honor-reel > article,
+html.has-motion .stamp,
+html.has-motion .contact-tile,
+html.has-motion .footer-top > * {
+  opacity: 0;
+}
+
+html.has-motion .stamp.rise-in:not(.is-in) {
+  transform: none;
+}

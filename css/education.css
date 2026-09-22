@@ -1,0 +1,311 @@
+/* education.css — Education map, route animation, and city cards. */
+
+.edu-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.edu-head .kicker,
+.edu-head h2 {
+  max-width: none;
+}
+
+.edu-atlas {
+  position: relative;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 31px,
+      color-mix(in srgb, var(--blue) 7%, transparent) 31px 32px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 31px,
+      color-mix(in srgb, var(--blue) 7%, transparent) 31px 32px
+    ),
+    var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  overflow: hidden;
+}
+
+.edu-compass {
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  width: 64px;
+  height: 64px;
+  color: color-mix(in srgb, var(--ink) 28%, transparent);
+  pointer-events: none;
+}
+
+.edu-compass svg {
+  width: 100%;
+  height: 100%;
+}
+
+.edu-route {
+  display: grid;
+  grid-template-columns: auto minmax(80px, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  margin: 8px 72px 32px 4px;
+}
+
+.edu-stop-city {
+    font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin: 8px 0 6px;
+}
+
+.edu-stop-nation {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.edu-stop-end {
+  text-align: right;
+}
+
+.edu-pin {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--blue);
+  background: var(--white);
+  transform: scale(0.4);
+  opacity: 0;
+  transition: transform 0.5s var(--ease-out), opacity 0.4s ease;
+}
+
+.edu-pin-now {
+  background: var(--blue);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--blue) 16%, transparent);
+}
+
+.edu-atlas.is-in .edu-pin {
+  transform: none;
+  opacity: 1;
+}
+
+.edu-flight {
+  position: relative;
+  height: 56px;
+  color: var(--blue);
+}
+
+.edu-flight svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.edu-flight-line {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-dasharray: 420;
+  stroke-dashoffset: 420;
+  transition: stroke-dashoffset 1.5s var(--ease-out);
+}
+
+.edu-atlas.is-in .edu-flight-line {
+  stroke-dashoffset: 0;
+}
+
+.edu-glider {
+  position: absolute;
+  top: 18px;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--blue);
+  opacity: 0;
+}
+
+.edu-atlas.is-in .edu-glider {
+  animation: edu-glide 1.5s var(--ease-out) 0.08s forwards;
+}
+
+@keyframes edu-glide {
+  0% {
+    left: 0;
+    top: 28px;
+    opacity: 1;
+  }
+  45% {
+    top: 8px;
+  }
+  100% {
+    left: calc(100% - 9px);
+    top: 14px;
+    opacity: 1;
+  }
+}
+
+.edu-cities {
+  display: grid;
+  grid-template-columns: 0.78fr 1.22fr;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.edu-city {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  padding: 28px;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+}
+
+.edu-idx {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--blue);
+}
+
+.edu-ghost {
+  position: absolute;
+  right: -6px;
+  bottom: -18px;
+    font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(80px, 12vw, 128px);
+  letter-spacing: -0.08em;
+  line-height: 0.75;
+  pointer-events: none;
+}
+
+.edu-city-origin {
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+
+.edu-city-origin .edu-ghost {
+  color: color-mix(in srgb, var(--blue) 12%, transparent);
+}
+
+.edu-city-now {
+  background: var(--black);
+  color: var(--white);
+  border: 1px solid var(--black);
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  grid-template-rows: auto 1fr;
+  gap: 12px;
+  align-items: end;
+}
+
+.edu-city-now .edu-idx,
+.edu-city-now .edu-meta {
+  color: var(--blue-soft);
+}
+
+.edu-city-now .edu-ghost {
+  color: color-mix(in srgb, var(--white) 8%, transparent);
+}
+
+.edu-city-now h3 {
+  color: var(--white);
+}
+
+.edu-city-art {
+  width: 120px;
+  margin: 28px 0 20px;
+}
+
+.edu-city-art svg,
+.edu-city-art-lg svg {
+  width: 100%;
+  height: auto;
+}
+
+.edu-city-art-lg {
+  width: min(100%, 220px);
+  margin: 8px 0 0;
+  color: color-mix(in srgb, var(--white) 82%, transparent);
+  grid-row: 2;
+}
+
+.edu-city-now .edu-idx {
+  grid-column: 1 / -1;
+}
+
+.edu-city-copy {
+  grid-column: 2;
+  grid-row: 2;
+  position: relative;
+  z-index: 1;
+}
+
+.edu-city h3 {
+  font-size: clamp(24px, 3vw, 34px);
+  margin: 8px 0 10px;
+  max-width: 12ch;
+}
+
+.edu-city p {
+  color: var(--muted);
+  font-size: 15px;
+  max-width: 28ch;
+}
+
+.edu-city-now p {
+  color: color-mix(in srgb, var(--white) 68%, transparent);
+}
+
+.edu-place {
+  margin-top: 12px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.edu-city-origin .edu-place {
+  color: var(--ink);
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.edu-city-now .edu-place {
+  color: color-mix(in srgb, var(--white) 78%, transparent);
+}
+
+.edu-meta {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--blue);
+}
+
+.edu-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.edu-chips li {
+  font-size: 12px;
+  border: 1px solid color-mix(in srgb, var(--white) 22%, transparent);
+  border-radius: 6px;
+  padding: 5px 9px;
+  color: var(--white);
+}

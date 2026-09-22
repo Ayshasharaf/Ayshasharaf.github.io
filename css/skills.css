@@ -1,0 +1,77 @@
+/* skills.css — Skills sheet rows. */
+
+.skill-sheet {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.skill-row {
+  display: grid;
+  grid-template-columns: 44px minmax(140px, 200px) 1fr;
+  gap: 12px 20px;
+  align-items: center;
+  padding: 22px 28px;
+  border-bottom: 1px solid var(--line);
+  transition: background 0.2s ease;
+}
+
+.skill-row:last-child {
+  border-bottom: 0;
+}
+
+.skill-row:hover {
+  background: color-mix(in srgb, var(--blue) 5%, var(--white));
+}
+
+.skill-mark {
+  width: 40px;
+  height: 40px;
+  border: 1px solid color-mix(in srgb, var(--blue) 35%, var(--line));
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  color: var(--blue);
+  flex-shrink: 0;
+}
+
+.skill-mark svg {
+  width: 20px;
+  height: 20px;
+}
+
+.skill-row:hover .skill-mark {
+  background: var(--blue);
+  color: var(--white);
+  border-color: var(--blue);
+}
+
+.skill-row h3 {
+  font-size: 15px;
+  letter-spacing: -0.02em;
+}
+
+.skill-row p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.skill-row p span + span::before {
+  content: "·";
+  margin: 0 8px;
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.skill-row-soft {
+  background: color-mix(in srgb, var(--blue) 6%, var(--white));
+}
+
+.skill-hash span {
+  color: var(--blue);
+}

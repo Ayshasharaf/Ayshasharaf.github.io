@@ -1,0 +1,182 @@
+/* hero.css — Hero plaque, site-wide section wrapper, and skills marquee strip. */
+
+/* Hero */
+
+.hero {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.plaque .btn-solid {
+  background: var(--white);
+  color: var(--blue);
+}
+
+.plaque .btn-solid:hover {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.plaque .btn-ghost {
+  background: transparent;
+  border-color: color-mix(in srgb, var(--white) 45%, transparent);
+  color: var(--white);
+}
+
+.plaque .btn-ghost:hover {
+  border-color: var(--white);
+  background: color-mix(in srgb, var(--white) 10%, transparent);
+}
+
+.hero-visual {
+  position: relative;
+}
+
+.plaque {
+  position: relative;
+  min-height: 100vh;
+  background: var(--blue);
+  color: var(--white);
+  border-radius: 0;
+  overflow: hidden;
+  padding: calc(var(--header) + 28px) 0 48px;
+}
+
+.plaque-inner {
+  position: relative;
+  z-index: 2;
+  max-width: none;
+  margin: 0;
+  padding: 0 var(--inset);
+  min-height: calc(100vh - var(--header) - 76px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+  pointer-events: none;
+}
+
+.plaque-top,
+.plaque-copy,
+.plaque-year {
+  pointer-events: auto;
+}
+
+.plaque-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--white) 14%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--white) 14%, transparent) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+}
+
+.plaque-top {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.plaque-main {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 40px;
+  align-items: end;
+  flex: 1;
+}
+
+.plaque-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 42rem;
+}
+
+.plaque-copy p {
+  font-size: clamp(15px, 1.5vw, 18px);
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--white) 84%, transparent);
+  max-width: 58ch;
+}
+
+.plaque-year {
+  position: relative;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Marquee */
+
+.marquee {
+  border-block: 1px solid var(--line);
+  overflow: hidden;
+  background: var(--white);
+  margin: 0;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 40px;
+  width: max-content;
+  padding: 14px 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  animation: tick 36s linear infinite;
+}
+
+.marquee-track span {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.marquee-track span::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: var(--blue);
+}
+
+@keyframes tick {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Sections */
+
+.section {
+  max-width: none;
+  margin: 0;
+  padding: var(--section-y) var(--inset);
+}
+
+.section-head {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.section-bleed {
+  max-width: none;
+  padding: 0;
+}

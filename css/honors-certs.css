@@ -1,0 +1,299 @@
+/* honors-certs.css — Honors reel, certification stamps, and scroll-in helper (.rise-in). */
+
+.honor-reel {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 16px;
+}
+
+.honor-spot,
+.honor-plaque,
+.honor-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  padding: 28px;
+}
+
+.honor-spot {
+  background:
+    radial-gradient(circle at 88% 18%, color-mix(in srgb, var(--white) 16%, transparent), transparent 42%),
+    var(--blue);
+  color: var(--white);
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+}
+
+.honor-stat {
+    font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(88px, 12vw, 148px);
+  letter-spacing: -0.08em;
+  line-height: 0.78;
+  margin: 28px 0 auto;
+}
+
+.honor-stat span {
+  font-size: 0.38em;
+  letter-spacing: -0.04em;
+  margin-left: 2px;
+  vertical-align: 0.32em;
+}
+
+.honor-spot h3 {
+  color: var(--white);
+  font-size: clamp(24px, 3vw, 32px);
+  max-width: 12ch;
+  margin: 16px 0 8px;
+}
+
+.honor-spot p:last-child {
+  color: color-mix(in srgb, var(--white) 72%, transparent);
+  max-width: 34ch;
+}
+
+.honor-plaque {
+  background: var(--white);
+  border: 1px solid var(--line);
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.honor-wreath {
+  position: absolute;
+  top: 18px;
+  right: 12px;
+  width: min(46%, 160px);
+  opacity: 0.9;
+}
+
+.honor-wreath svg {
+  width: 100%;
+  height: auto;
+}
+
+.honor-plaque h3,
+.honor-frame h3 {
+  font-size: clamp(24px, 3vw, 32px);
+  max-width: 12ch;
+  margin: 8px 0 10px;
+}
+
+.honor-plaque p,
+.honor-frame p {
+  color: var(--muted);
+}
+
+.honor-frame {
+  background: var(--white);
+  border: 1px solid var(--line);
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: transform 0.35s ease, border-color 0.35s ease;
+}
+
+.honor-frame:hover,
+.honor-plaque:hover {
+  transform: translateY(-4px);
+  border-color: var(--blue);
+}
+
+.honor-doodle {
+  position: absolute;
+  top: 20px;
+  right: 18px;
+  width: 64px;
+  height: 64px;
+}
+
+.honor-doodle svg {
+  width: 100%;
+  height: 100%;
+}
+
+.honor-when {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.honor-spot .honor-when {
+  color: color-mix(in srgb, var(--white) 78%, transparent);
+}
+
+.stamp-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.stamp-head h2 {
+  max-width: none;
+}
+
+.stamp-count {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-bottom: 4px;
+}
+
+.stamp-album {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px 20px;
+  padding: 32px;
+  background:
+    radial-gradient(circle at 12px 12px, color-mix(in srgb, var(--blue) 16%, transparent) 1px, transparent 1.4px) 0 0 / 24px 24px,
+    color-mix(in srgb, var(--blue) 5%, var(--white));
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.stamp {
+  --tilt: 0deg;
+  position: relative;
+  min-height: 210px;
+  padding: 22px 20px 20px;
+  background: var(--white);
+  border: 1.6px dashed color-mix(in srgb, var(--ink) 28%, var(--line));
+  box-shadow:
+    inset 0 0 0 6px var(--white),
+    inset 0 0 0 7px color-mix(in srgb, var(--blue) 18%, var(--line)),
+    6px 10px 0 color-mix(in srgb, var(--blue) 10%, transparent);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transform: rotate(var(--tilt));
+  transition: transform 0.45s var(--ease-out), box-shadow 0.45s ease;
+}
+
+/* Per-card tilt (more specific than .stamp's default --tilt: 0deg). */
+.stamp.stamp-tilt-1 { --tilt: -2.2deg; }
+.stamp.stamp-tilt-2 { --tilt: 1.6deg; }
+.stamp.stamp-tilt-3 { --tilt: -1.4deg; }
+.stamp.stamp-tilt-4 { --tilt: 1.8deg; }
+.stamp.stamp-tilt-5 { --tilt: -1.8deg; }
+
+.stamp.rise-in {
+  opacity: 0;
+  transform: rotate(calc(var(--tilt) + 7deg)) translateY(36px);
+}
+
+.stamp.rise-in.is-in {
+  opacity: 1;
+  transform: rotate(var(--tilt));
+}
+
+.stamp.rise-in.is-in:hover,
+.stamp:hover {
+  z-index: 2;
+  transform: rotate(0deg) translateY(-8px);
+  box-shadow:
+    inset 0 0 0 6px var(--white),
+    inset 0 0 0 7px var(--blue),
+    10px 18px 0 color-mix(in srgb, var(--blue) 16%, transparent);
+}
+
+.stamp-inked {
+  background: var(--blue);
+  color: var(--white);
+  border-color: color-mix(in srgb, var(--white) 45%, transparent);
+  box-shadow:
+    inset 0 0 0 6px var(--blue),
+    inset 0 0 0 7px color-mix(in srgb, var(--white) 35%, transparent),
+    6px 10px 0 color-mix(in srgb, var(--navy) 35%, transparent);
+}
+
+.stamp-inked:hover {
+  box-shadow:
+    inset 0 0 0 6px var(--blue),
+    inset 0 0 0 7px var(--white),
+    10px 18px 0 color-mix(in srgb, var(--navy) 40%, transparent);
+}
+
+.stamp-seal {
+  position: absolute;
+  top: 22px;
+  left: 20px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  background: var(--blue);
+}
+
+.stamp-inked .stamp-seal {
+  background: var(--white);
+  color: var(--blue);
+}
+
+.stamp-post {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 62px;
+  height: 62px;
+  border: 1.5px dashed currentColor;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  transform: rotate(14deg);
+  opacity: 0.72;
+}
+
+.stamp-post::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+}
+
+.stamp h3 {
+  font-size: 22px;
+  max-width: 16ch;
+  margin: 0 0 10px;
+  padding-right: 48px;
+}
+
+.stamp p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.stamp-inked p {
+  color: color-mix(in srgb, var(--white) 72%, transparent);
+}
+
+.rise-in {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s var(--ease-out);
+}
+
+.rise-in.is-in {
+  opacity: 1;
+  transform: none;
+}

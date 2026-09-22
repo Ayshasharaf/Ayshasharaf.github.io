@@ -1,0 +1,294 @@
+/* responsive.css — Breakpoints (960 / 720) and prefers-reduced-motion overrides. */
+
+/* Responsive */
+
+@media (max-width: 960px) {
+  :root {
+    --gutter: 24px;
+    --section-y: 72px;
+  }
+
+  .nav {
+    position: fixed;
+    inset: calc(var(--header) + 8px) var(--gutter) auto;
+    background: var(--white);
+    color: var(--muted);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    flex-direction: column;
+    padding: 16px;
+    gap: 12px;
+    display: none;
+    box-shadow: 0 16px 40px color-mix(in srgb, var(--ink) 8%, transparent);
+  }
+
+  .nav a:hover,
+  .nav a:focus-visible {
+    color: var(--ink);
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .featured,
+  .project-wide,
+  .job,
+  .split-scene {
+    grid-template-columns: 1fr;
+  }
+
+  .project-lg .project-visual {
+    height: auto;
+    min-height: 240px;
+  }
+
+  .job-when {
+    position: relative;
+    top: auto;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .archive {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .edu-compass {
+    display: none;
+  }
+
+  .edu-route {
+    margin: 8px 8px 28px 0;
+  }
+
+  .edu-cities,
+  .edu-city-now {
+    grid-template-columns: 1fr;
+  }
+
+  .edu-city-art-lg,
+  .edu-city-copy {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .stamp-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .stamp-album {
+    grid-template-columns: 1fr 1fr;
+    padding: 24px;
+    gap: 20px 16px;
+  }
+
+  .honor-reel {
+    grid-template-columns: 1fr;
+  }
+
+  .honor-spot,
+  .honor-plaque {
+    min-height: 280px;
+  }
+
+  .edu-atlas,
+  .edu-city {
+    padding: 22px 18px;
+  }
+
+  .skill-row {
+    grid-template-columns: 40px 1fr;
+    padding: 18px 20px;
+  }
+
+  .skill-row h3 {
+    grid-column: 2;
+  }
+
+  .skill-row p {
+    grid-column: 1 / -1;
+  }
+
+  .plaque {
+    min-height: 100svh;
+    padding: calc(var(--header) + 24px) 0 40px;
+  }
+
+  .plaque-inner {
+    min-height: calc(100svh - var(--header) - 64px);
+  }
+
+  .plaque-main {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  :root {
+    --gutter: 20px;
+    --section-y: 56px;
+  }
+
+  .nav {
+    position: fixed;
+    inset: calc(var(--header) + 8px) var(--gutter) auto;
+    background: var(--white);
+    color: var(--muted);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    flex-direction: column;
+    padding: 16px;
+    gap: 12px;
+    display: none;
+    box-shadow: 0 16px 40px color-mix(in srgb, var(--ink) 8%, transparent);
+  }
+
+  .nav a:hover,
+  .nav a:focus-visible {
+    color: var(--ink);
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .availability {
+    display: none;
+  }
+
+  .brand-name {
+    display: none;
+  }
+
+  .archive {
+    grid-template-columns: 1fr;
+  }
+
+  .edu-route {
+    grid-template-columns: 1fr 1fr;
+    margin: 0 0 20px;
+  }
+
+  .edu-flight {
+    display: none;
+  }
+
+  .edu-stop-end {
+    text-align: left;
+  }
+
+  .edu-stop-city {
+    font-size: 18px;
+  }
+
+  .stamp-album {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .project-gallery[data-count="2"]:not(.is-videos) {
+    grid-template-columns: 1fr;
+  }
+
+  .stamp,
+  .stamp.rise-in,
+  .stamp.rise-in.is-in,
+  .stamp:hover {
+    transform: none;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-ghost {
+    display: none;
+  }
+
+  .footer-arcs {
+    width: 360px;
+    height: 360px;
+    right: -140px;
+    top: -140px;
+  }
+
+  .footer-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-tile {
+    min-height: 168px;
+  }
+
+  .hero {
+    padding-top: 0;
+  }
+
+  h1 {
+    max-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .marquee-track,
+  .btn,
+  .project,
+  .contact-tile,
+  .footer-arcs,
+  .footer-live i {
+    animation: none;
+    transition: none;
+  }
+
+  .rise-in,
+  .stamp.rise-in,
+  .stamp.rise-in.is-in,
+  .stamp:hover {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .edu-flight-line,
+  .edu-glider,
+  .edu-pin {
+    animation: none;
+    transition: none;
+  }
+
+  .edu-flight-line {
+    stroke-dashoffset: 0;
+  }
+
+  .edu-pin {
+    transform: none;
+    opacity: 1;
+  }
+
+  .honor-frame:hover,
+  .honor-plaque:hover {
+    transform: none;
+  }
+
+  .edu-glider {
+    display: none;
+  }
+}

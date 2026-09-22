@@ -1,0 +1,31 @@
+/* tokens.css — Color, type, spacing, and z-index tokens. Edit these to restyle the site. */
+:root {
+  --bg: #f5f5f7;
+  --white: #ffffff;
+  --ink: #0a0b14;
+  --muted: #5c5f6b;
+  --line: #e4e5ea;
+  --blue: #173ded;
+  --blue-deep: #123499;
+  --blue-bright: #2b54ff;
+  --blue-soft: #7ea0ff;
+  --navy: #000051;
+  --black: #000029;
+  --grey: #dcdee2; /* palette token; not used in current layouts */
+  --live: #1ecf6a;
+  --radius: 16px;
+  --radius-lg: 24px;
+  --max: 1120px;
+  --gutter: 32px;
+  --section-y: 88px;
+  --header: 72px;
+  --inset: max(var(--gutter), calc((100% - var(--max)) / 2));
+  --font-sans: Inter, system-ui, sans-serif;
+  --font-display: Syne, sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-cursor: cubic-bezier(0.16, 1, 0.3, 1);
+  --z-header: 50;
+  --z-skip: 100;
+  --z-cursor: 200;
+}
