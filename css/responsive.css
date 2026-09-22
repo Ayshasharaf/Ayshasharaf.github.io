@@ -68,15 +68,8 @@
     margin: 8px 8px 28px 0;
   }
 
-  .edu-cities,
-  .edu-city-now {
+  .edu-cities {
     grid-template-columns: 1fr;
-  }
-
-  .edu-city-art-lg,
-  .edu-city-copy {
-    grid-column: 1;
-    grid-row: auto;
   }
 
   .stamp-head {
@@ -248,7 +241,6 @@
     scroll-behavior: auto;
   }
 
-  .marquee-track,
   .btn,
   .project,
   .contact-tile,

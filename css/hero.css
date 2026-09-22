@@ -1,4 +1,4 @@
-/* hero.css — Hero plaque, site-wide section wrapper, and skills marquee strip. */
+/* hero.css — Hero plaque and site-wide section wrapper. */
 
 /* Hero */
 
@@ -121,45 +121,6 @@
 }
 
 /* Marquee */
-
-.marquee {
-  border-block: 1px solid var(--line);
-  overflow: hidden;
-  background: var(--white);
-  margin: 0;
-}
-
-.marquee-track {
-  display: flex;
-  gap: 40px;
-  width: max-content;
-  padding: 14px 0;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-  animation: tick 36s linear infinite;
-}
-
-.marquee-track span {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-
-.marquee-track span::after {
-  content: "";
-  width: 6px;
-  height: 6px;
-  background: var(--blue);
-}
-
-@keyframes tick {
-  to {
-    transform: translateX(-50%);
-  }
-}
 
 /* Sections */
 

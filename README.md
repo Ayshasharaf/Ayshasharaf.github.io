@@ -12,7 +12,7 @@ css/
   base.css              Reset and skip link
   cursor.css            Custom pointer
   header.css            Header, type scale, buttons
-  hero.css              Hero plaque, section wrapper, marquee
+  hero.css              Hero plaque and section wrapper
   projects.css          Project cards and case-study dialog
   skills.css            Skills sheet
   education.css         Education map and city cards

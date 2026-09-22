@@ -27,7 +27,7 @@
     />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23173DED'/><text x='16' y='22' text-anchor='middle' font-family='Arial' font-size='14' font-weight='700' fill='white'>AS</text></svg>" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.css" />
-    <link rel="stylesheet" href="css/styles.css?v=40" />
+    <link rel="stylesheet" href="css/styles.css?v=46" />
     <script>
       if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         document.documentElement.classList.add("has-motion");
@@ -71,43 +71,39 @@
     </header>
 
     <main id="main">
-      <!-- 01 About — full-bleed hero plaque -->
+      <!-- 01 About: full-bleed hero plaque -->
       <section class="hero" id="about">
         <div class="hero-visual">
           <div class="plaque">
             <div class="plaque-grid"></div>
             <div class="plaque-inner">
               <div class="plaque-top">
-                <p class="kicker light"><span>01 / about</span> Portfolio · 2026</p>
+                <p class="kicker light"><span>01 / about</span> Portfolio</p>
               </div>
               <div class="plaque-main">
                 <div class="plaque-copy">
                   <h1>Hi, I’m Aysha<span class="white-sq" aria-hidden="true"></span></h1>
                   <p>
-                    I’m a young, ambitious creator who loves bringing ideas to life through filming,
-                    editing, drawing, and anything hands-on. My goal is to find experiences where I
-                    can fully explore my potential, learn from others, and carry that knowledge
-                    forward to help people.
+                    I've been creating since I was a kid, and that hasn't changed. Only the tools have. 
+                    From filming and drawing to writing code, I bring the same hands-on curiosity to everything I build. 
                   </p>
                   <p>
-                    I’m inspired by engineers who ask the right questions, simplify complexity, and
-                    build things that truly matter. I aspire to design scalable, maintainable
-                    products with a strong foundation—and right now, my focus is on fintech and the
-                    vital importance of data integrity.
+                    I'm a full-stack developer, currently more drawn to backend engineering. My goal is to keep exploring my potential, learn from others, 
+                    and carry that knowledge forward to help people.
                   </p>
+                 
                   <div class="hero-actions">
                     <a class="btn btn-solid" href="#work">View projects</a>
                     <a class="btn btn-ghost" href="#contact">Get in touch <span aria-hidden="true">→</span></a>
                   </div>
                 </div>
               </div>
-              <p class="plaque-year">2026</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 02 Projects — featured cards + optional archive. data-project keys live in js/projects-data.js -->
+      <!-- 02 Projects: featured cards + optional archive. data-project keys live in js/projects-data.js -->
       <section class="section" id="work">
         <div class="section-head">
           <p class="kicker"><span>02 / projects</span> Selected work</p>
@@ -132,15 +128,16 @@
               <p class="project-meta">Intellect Design Arena · 2025</p>
               <h3>Bank Monitoring Dashboard</h3>
               <p>
-                A live view of transaction status, file-processing events, and payment failures —
-                so operations teams stop hunting through logs.
+                Centralized ops dashboard for live Feed/EOD files and payment failures (DuitNow),
+                so issues surface before customers complain. Figma → Angular → Spring Boot → Oracle.
               </p>
               <ul class="tags">
                 <li>Java</li>
                 <li>Spring Boot</li>
+                <li>REST API</li>
                 <li>Angular</li>
+                <li>TypeScript</li>
                 <li>Oracle SQL</li>
-                <li>JWT</li>
               </ul>
               <p class="project-more">Read more <span aria-hidden="true">→</span></p>
             </div>
@@ -162,18 +159,19 @@
                   <circle cx="138" cy="18" r="3.2" fill="#fff" />
                 </svg>
               </div>
-              <p class="visual-sub">Top 14% · Orchestrate</p>
+              <p class="visual-sub">Top 13% · Orchestrate</p>
             </div>
             <div class="project-body">
               <p class="project-meta">HackerRank Orchestrate · Sep 2026</p>
-              <h3>AI Financial Agent</h3>
+              <h3>AI Financial Agent: “Buy or Wait?”</h3>
               <p>
-                An agent that decides if a purchase is affordable — pay in full, split, wait, or
-                don’t — against a 90-day cash forecast. No hardcoded answers.
+                A 24-hour hackathon agent that decides if a purchase is affordable (pay, split,
+                wait, or don’t) by simulating cash day-by-day for 90 days. Finished #401 of 3,062
+                (top 13%).
               </p>
               <ul class="tags">
                 <li>Python</li>
-                <li>Gemini</li>
+                <li>gemini-3.6-flash</li>
                 <li>Agents</li>
               </ul>
               <p class="project-more">Read more <span aria-hidden="true">→</span></p>
@@ -201,10 +199,10 @@
             </div>
             <div class="project-body">
               <p class="project-meta">Final Year Project · MMU 2025</p>
-              <h3>SplitSmart — Shared Expense Tracker</h3>
+              <h3>SplitSmart: Shared Expense Tracker</h3>
               <p>
-                Cross-platform app for logging group expenses, simplifying debts, and settling
-                with the fewest transactions. Live sync on Firebase. Android APK and web.
+                Cross-platform tracker for group spend, simplifying debts, and settling with the
+                fewest transactions. Android APK and web, live on Firestore.
               </p>
               <ul class="tags">
                 <li>Flutter</li>
@@ -227,7 +225,7 @@
           <article class="archive-card" data-project="student-management" tabindex="0" role="button" aria-haspopup="dialog">
             <span class="archive-num">04</span>
             <h3>Student Management</h3>
-            <p>Portals for students, lecturers, and admins. Course planning.</p>
+            <p>Java desktop portals for students, lecturers, and admins.</p>
             <ul class="tags">
               <li>Java</li>
               <li>Scene Builder</li>
@@ -237,7 +235,7 @@
           <article class="archive-card" data-project="student-enrollment" tabindex="0" role="button" aria-haspopup="dialog">
             <span class="archive-num">05</span>
             <h3>Student Enrollment</h3>
-            <p>Profiles, course registration, billing, discounts, invoices.</p>
+            <p>Profiles, registration, and billing, designed first in Figma.</p>
             <ul class="tags">
               <li>Java</li>
               <li>Swing</li>
@@ -247,7 +245,7 @@
           <article class="archive-card" data-project="web-services" tabindex="0" role="button" aria-haspopup="dialog">
             <span class="archive-num">06</span>
             <h3>Web Services &amp; Integration</h3>
-            <p>ASP.NET Core APIs with a web front end — customer, kitchen, and admin flows.</p>
+            <p>SSHBites: food ordering via ASP.NET APIs. Render + GitHub Pages.</p>
             <ul class="tags">
               <li>ASP.NET Core</li>
               <li>REST</li>
@@ -257,7 +255,7 @@
           <article class="archive-card" data-project="booksy" tabindex="0" role="button" aria-haspopup="dialog">
             <span class="archive-num">07</span>
             <h3>Ebook App</h3>
-            <p>Digital library with reading, audiobooks, and publish requests.</p>
+            <p>Digital library: reading, audiobooks, and publishing requests.</p>
             <ul class="tags">
               <li>WordPress</li>
               <li>Android</li>
@@ -266,7 +264,7 @@
           <article class="archive-card" data-project="wireframe" tabindex="0" role="button" aria-haspopup="dialog">
             <span class="archive-num">08</span>
             <h3>Website Wireframe</h3>
-            <p>Restaurant IT services site — POS, menus, surveillance. Enbaar.</p>
+            <p>Restaurant IT for Enbaar: POS, menus, surveillance. Figma to WordPress.</p>
             <ul class="tags">
               <li>Figma</li>
               <li>WordPress</li>
@@ -276,7 +274,7 @@
         </details>
       </section>
 
-      <!-- 03 Experience — full-bleed blue panel; add another <article class="job"> to extend the timeline -->
+      <!-- 03 Experience: full-bleed blue panel; add another <article class="job"> to extend the timeline -->
       <section class="section section-bleed" id="experience">
         <div class="experience-panel">
           <div class="experience-glow" aria-hidden="true"></div>
@@ -322,7 +320,7 @@
             </div>
             <div class="job-main">
               <h3>VIP Coordinator</h3>
-              <p class="job-co">AISSE 2025 — Asia International Security Summit &amp; Expo</p>
+              <p class="job-co">AISSE 2025: Asia International Security Summit &amp; Expo</p>
               <p>
                 Managed schedules for international VIP delegates at a 3-day security summit hosted
                 by Malaysia’s Ministry of Home Affairs and the Royal Malaysia Police. Worked with
@@ -336,7 +334,7 @@
         </div>
       </section>
 
-      <!-- 04 Skills — one .skill-row per category -->
+      <!-- 04 Skills: one .skill-row per category -->
       <section class="section" id="skills">
         <div class="section-head">
           <p class="kicker"><span>04 / skills</span> Stack</p>
@@ -425,7 +423,7 @@
             </span>
             <h3>AI &amp; agents</h3>
             <p>
-              <span>Gemini</span><span>LangChain</span><span>LangGraph</span>
+              <span>LangChain</span><span>LangGraph</span>
               <span>LlamaIndex</span><span>smolagents</span><span>Hugging Face</span>
               <span>RAG</span><span>Pinecone</span>
             </p>
@@ -447,20 +445,6 @@
           </article>
         </div>
       </section>
-
-      <!-- Decorative ticker (duplicated spans so the loop can scroll -50%) -->
-      <div class="marquee" aria-hidden="true">
-        <div class="marquee-track">
-          <span>Java</span><span>Spring Boot</span><span>Oracle SQL</span><span>Angular</span>
-          <span>Python</span><span>Gemini</span><span>Flutter</span><span>Firebase</span>
-          <span>REST APIs</span><span>JWT</span><span>JUnit 5</span><span>Docker</span>
-          <span>LangGraph</span><span>PostgreSQL</span><span>Go</span><span>TypeScript</span>
-          <span>Java</span><span>Spring Boot</span><span>Oracle SQL</span><span>Angular</span>
-          <span>Python</span><span>Gemini</span><span>Flutter</span><span>Firebase</span>
-          <span>REST APIs</span><span>JWT</span><span>JUnit 5</span><span>Docker</span>
-          <span>LangGraph</span><span>PostgreSQL</span><span>Go</span><span>TypeScript</span>
-        </div>
-      </div>
 
       <!-- 05 Education -->
       <section class="section" id="education">
@@ -520,14 +504,14 @@
               </div>
               <p class="edu-meta">2022</p>
               <h3>Indian School Darsait</h3>
-              <p>High school — Computer Science with Biology.</p>
+              <p>School, Computer Science.</p>
               <p class="edu-place">Muscat, Oman</p>
             </article>
 
             <article class="edu-city edu-city-now rise-in">
               <span class="edu-idx">02</span>
               <span class="edu-ghost" aria-hidden="true">BIT</span>
-              <div class="edu-city-art edu-city-art-lg" aria-hidden="true">
+              <div class="edu-city-art" aria-hidden="true">
                 <svg viewBox="0 0 220 150" fill="none">
                   <path d="M12 128h196" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
                   <path d="M36 128V78h52v50" stroke="currentColor" stroke-width="1.5"/>
@@ -543,17 +527,10 @@
                   <path d="M20 128c18-22 48-38 90-38 42 0 72 16 90 38" stroke="#173DED" stroke-width="1.4"/>
                 </svg>
               </div>
-              <div class="edu-city-copy">
-                <p class="edu-meta">2023 — 2026</p>
-                <h3>Multimedia University</h3>
-                <p>B.IT (Hons.) Information Systems.</p>
-                <p class="edu-place">Cyberjaya, Malaysia</p>
-                <ul class="edu-chips">
-                  <li>Systems</li>
-                  <li>Software</li>
-                  <li>Data</li>
-                </ul>
-              </div>
+              <p class="edu-meta">2023-2026</p>
+              <h3>Multimedia University</h3>
+              <p>B.IT (Hons.) Information Systems.</p>
+              <p class="edu-place">Cyberjaya, Malaysia</p>
             </article>
           </div>
         </div>
@@ -563,26 +540,22 @@
       <section class="section" id="honors">
         <div class="section-head">
           <p class="kicker"><span>06 / honors</span> Recognition</p>
-          <h2>What I’m proud of.</h2>
+          <h2>Little wins worth mentioning</h2>
         </div>
 
         <div class="honor-reel">
           <article class="honor-spot rise-in">
             <p class="honor-when">Sep 2026 · 24-hour hackathon</p>
-            <p class="honor-stat">14<span>%</span></p>
+            <p class="honor-stat">13<span>%</span></p>
             <h3>HackerRank Orchestrate</h3>
-            <p>Finished in the top 14% with an AI financial agent — pay, split, wait, or don’t.</p>
+            <p>Finished #401 of 3,062 with an AI financial agent (pay, split, wait, or don’t).</p>
           </article>
 
           <article class="honor-plaque rise-in">
-            <div class="honor-wreath" aria-hidden="true">
-              <svg viewBox="0 0 140 140" fill="none">
-                <path d="M70 18c-18 14-28 34-28 52 0 14 6 26 16 34" stroke="#173DED" stroke-width="1.6" stroke-linecap="round"/>
-                <path d="M70 18c18 14 28 34 28 52 0 14-6 26-16 34" stroke="#173DED" stroke-width="1.6" stroke-linecap="round"/>
-                <path d="M48 36l-10 6M44 50l-12 4M42 64l-12 2M44 78l-11-2M50 90l-8-6" stroke="#173DED" stroke-width="1.4" stroke-linecap="round"/>
-                <path d="M92 36l10 6M96 50l12 4M98 64l12 2M96 78l11-2M90 90l8-6" stroke="#173DED" stroke-width="1.4" stroke-linecap="round"/>
-                <path d="M54 118h32" stroke="#173DED" stroke-width="1.6" stroke-linecap="round"/>
-                <path d="M62 110h16" stroke="#173DED" stroke-width="1.4" stroke-linecap="round"/>
+            <div class="honor-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="6"/>
+                <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/>
               </svg>
             </div>
             <p class="honor-when">Jun 2026</p>
@@ -591,26 +564,24 @@
           </article>
 
           <article class="honor-frame rise-in">
-            <div class="honor-doodle" aria-hidden="true">
-              <svg viewBox="0 0 72 72" fill="none">
-                <rect x="18" y="10" width="36" height="52" rx="6" stroke="#173DED" stroke-width="1.6"/>
-                <path d="M18 20h36" stroke="#173DED" stroke-width="1.5"/>
-                <circle cx="36" cy="15" r="1.6" fill="#173DED"/>
-                <rect x="26" y="28" width="20" height="6" rx="1.5" stroke="#173DED" stroke-width="1.3"/>
-                <path d="M26 42h20M26 48h14" stroke="#173DED" stroke-width="1.3" stroke-linecap="round"/>
+            <div class="honor-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 7v14"/>
+                <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/>
               </svg>
             </div>
             <p class="honor-when">2021</p>
-            <h3>STAI — Booksy</h3>
+            <h3>STAI: Booksy</h3>
             <p>Mobile app development, ISD Salalah</p>
           </article>
 
           <article class="honor-frame rise-in">
-            <div class="honor-doodle" aria-hidden="true">
-              <svg viewBox="0 0 72 72" fill="none">
-                <rect x="12" y="28" width="48" height="28" rx="4" stroke="#173DED" stroke-width="1.6"/>
-                <path d="M16 28l10-14 28 8-8 14" stroke="#173DED" stroke-width="1.6" stroke-linejoin="round"/>
-                <path d="M12 40h48M22 48h8M34 48h16" stroke="#173DED" stroke-width="1.4" stroke-linecap="round"/>
+            <div class="honor-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z"/>
+                <path d="m6.2 5.3 3.1 3.9"/>
+                <path d="m12.4 3.4 3.1 4"/>
+                <path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/>
               </svg>
             </div>
             <p class="honor-when">2021</p>
@@ -620,14 +591,14 @@
         </div>
       </section>
 
-      <!-- 07 Certifications — stamp-tilt-* sets rotation; keep stamp-count in sync -->
+      <!-- 07 Certifications: stamp-tilt-* sets rotation; keep stamp-count in sync -->
       <section class="section" id="certs">
         <div class="section-head stamp-head">
           <div>
             <p class="kicker"><span>07 / certifications</span> Credentials</p>
             <h2>Stamped along the way.</h2>
           </div>
-          <p class="stamp-count">5 marks · 2021 — 2026</p>
+          <p class="stamp-count">5 marks · 2021-2026</p>
         </div>
 
         <div class="stamp-album">
@@ -652,7 +623,7 @@
           <article class="stamp stamp-tilt-4 rise-in">
             <span class="stamp-seal">GV</span>
             <span class="stamp-post">2021</span>
-            <h3>Python programming — Guinness World Record Event</h3>
+            <h3>Python programming: Guinness World Record Event</h3>
             <p>HCL GUVI · May 2021</p>
           </article>
           <article class="stamp stamp-tilt-5 rise-in">
@@ -707,13 +678,13 @@
         </div>
 
         <div class="footer-bar">
-          <p class="footer-copy">© 2026 Aysha S</p>
+          <p class="footer-copy">© Aysha S</p>
           <a class="footer-top-link" href="#top">Back to top <span aria-hidden="true">↑</span></a>
         </div>
       </div>
     </footer>
 
-    <!-- Case study modal — body filled from js/projects-data.js -->
+    <!-- Case study modal: body filled from js/projects-data.js -->
     <dialog class="project-dialog" id="project-dialog" aria-labelledby="project-dialog-title">
       <div class="project-sheet">
         <button class="project-dialog-close" type="button" aria-label="Close project details">
@@ -730,11 +701,11 @@
     <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
-    <script src="js/projects-data.js?v=32"></script>
-    <script src="js/nav.js?v=32"></script>
-    <script src="js/cursor.js?v=32"></script>
-    <script src="js/motion.js?v=32"></script>
-    <script src="js/project-dialog.js?v=32"></script>
-    <script src="js/main.js?v=32"></script>
+    <script src="js/projects-data.js?v=36"></script>
+    <script src="js/nav.js?v=36"></script>
+    <script src="js/cursor.js?v=36"></script>
+    <script src="js/motion.js?v=36"></script>
+    <script src="js/project-dialog.js?v=36"></script>
+    <script src="js/main.js?v=36"></script>
   </body>
 </html>

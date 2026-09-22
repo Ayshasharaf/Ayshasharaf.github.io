@@ -188,7 +188,7 @@ function initMotion() {
       once: true,
       onEnter: () => {
         gsap.to(counter, {
-          value: 14,
+          value: 13,
           duration: 1.2,
           ease: "power2.out",
           onUpdate: () => {

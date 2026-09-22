@@ -7,52 +7,44 @@ window.Portfolio.PROJECTS = {
   "bank-dashboard": {
     kicker: "Intellect Design Arena · 2025",
     title: "Bank Monitoring Dashboard",
-    tags: ["Java", "Spring Boot", "Angular", "Oracle SQL", "JWT"],
+    tags: ["Java", "Spring Boot", "REST API", "Angular", "TypeScript", "Oracle SQL"],
     sections: [
       {
         heading: "Overview",
-        text: "A live operations view of transaction status, file-processing events, and payment failures — so teams stop hunting through logs. Built during my fintech internship at Intellect Design Arena.",
+        text: "The bank had no real-time visibility into daily operations. Tracking Feed/EOD files was a manual struggle, and payment failures (like DuitNow) often went unnoticed until a customer complained. Built a centralized dashboard to fix that, end-to-end, during a fintech internship at Intellect Design Arena.",
       },
       {
         heading: "What it does",
         items: [
-          "Surfaces payment and file events as they happen, instead of burying them in server logs.",
-          "Helps operations see failures quickly and follow them back to the processing step.",
-          "Sits alongside the work I did mapping the FPX online payment lifecycle into flowcharts and sequence diagrams.",
+          "Analytics page: daily trends across transactions, new users, and digital payment growth.",
+          "Monitoring page: live Feed/EOD file-processing status with failure alerts, so issues surface before customers notice.",
+          "Full stack: UI designed in Figma → frontend in Angular/TypeScript → Spring Boot server exposing RESTful APIs → Oracle SQL for data retrieval, a standard request/response loop from frontend to server to storage and back.",
         ],
-      },
-      {
-        heading: "What I learned",
-        text: "How banking software is really operated: data integrity, full-stack delivery, and making complex payment flows readable for the people who run them.",
       },
     ],
   },
   "ai-agent": {
     kicker: "HackerRank Orchestrate · Sep 2026",
-    title: "AI Financial Agent",
-    tags: ["Python", "Gemini", "Agents"],
+    title: "AI Financial Agent: “Buy or Wait?”",
+    tags: ["Python", "Gemini-3.6-flash", "Agents"],
     sections: [
       {
         heading: "Overview",
-        text: "A 24-hour hackathon agent that decides if a purchase is affordable — pay in full, split, wait, or don’t — against a 90-day cash forecast. No hardcoded answers. Finished in the top 14%.",
+        text: "A 24-hour hackathon agent that decides if a purchase is affordable (pay in full, split, wait, or don’t) by simulating each user’s cash position day-by-day for 90 days. No hardcoded answers. Finished #401 of 3,062 (top 13%).",
       },
       {
         heading: "What it does",
         items: [
-          "Reads a short-term cash picture and recommends a money decision, not a slogan.",
-          "Chooses among pay, split, wait, or skip using the agent stack rather than if/else rules.",
-          "Was built to reason, not to recite a scripted reply.",
+          "Splits the work by trust: Gemini only extracts facts from messages/receipts (never does math); Python owns every number (FX, conflict resolution, recurrence, the 90-day solvency simulation, and ranking).",
+          "Simulates day-by-day cash flow against a minimum-balance floor to find the largest safe payment today, not just current balance minus expenses.",
+          "Ranks candidate plans (full / partial / installments / wait) and only proposes cutting flexible spending if nothing else clears the deadline.",
         ],
-      },
-      {
-        heading: "What I learned",
-        text: "How to brief an agent, keep tool use honest, and ship a complete decision under hackathon time pressure.",
       },
     ],
   },
   splitsmart: {
     kicker: "Final Year Project · MMU 2025",
-    title: "SplitSmart — Shared Expense Tracker",
+    title: "SplitSmart: Shared Expense Tracker",
     tags: ["Flutter", "Dart", "Firebase Firestore"],
     images: [
       { src: "assets/projects/fyp1.png", alt: "SplitSmart friends, settle up, groups, and split screens" },
@@ -67,13 +59,9 @@ window.Portfolio.PROJECTS = {
         heading: "What it does",
         items: [
           "Logs shared expenses and splits them equally or with custom ratios.",
-          "Simplifies who owes whom so the group settles in fewer payments.",
-          "Keeps balances live with Firebase, including friends, personal totals, and profile settings.",
+          "Simplifies who-owes-whom so groups settle in fewer transactions.",
+          "Keeps balances live via Firestore, including friends, personal totals, and profile settings.",
         ],
-      },
-      {
-        heading: "What I learned",
-        text: "Flutter + Firestore for real-time apps, NoSQL schema for groups and transactions, and a simple UI people of any age can use. Inspired by Splitwise — built as a cleaner, local-friendly alternative.",
       },
     ],
   },
@@ -88,19 +76,15 @@ window.Portfolio.PROJECTS = {
     sections: [
       {
         heading: "Overview",
-        text: "A Java desktop system with separate doors for students, lecturers, and admins.",
+        text: "A Java desktop system with separate portals for students, lecturers, and admins.",
       },
       {
         heading: "What it does",
         items: [
           "Students view subjects, plan semesters, and register for courses.",
           "Admins add students, manage subjects, and assign lecturers.",
-          "Lecturers see who is enrolled in their subjects.",
+          "Lecturers see who’s enrolled in their subjects.",
         ],
-      },
-      {
-        heading: "What I learned",
-        text: "Deeper Java, GUI work in Scene Builder, and storing the data in XAMPP. University group assignment, 2024.",
       },
     ],
   },
@@ -112,19 +96,14 @@ window.Portfolio.PROJECTS = {
     sections: [
       {
         heading: "Overview",
-        text: "A Java Swing enrollment product covering profiles, registration, and billing — designed first in Figma.",
+        text: "A Java Swing enrollment product covering profiles, registration, and billing, designed first in Figma.",
       },
       {
         heading: "What it does",
         items: [
-          "Students create and update profiles.",
-          "Course selection and registration in one flow.",
-          "Automated fees, discounts, and invoices.",
+          "Students create and update profiles, then select and register for courses in one flow.",
+          "Automates fee calculation, discounts, and invoice generation.",
         ],
-      },
-      {
-        heading: "What I learned",
-        text: "Turning analysis into working software, especially the messy parts: fee rules and discounts. University group assignment, 2024.",
       },
     ],
   },
@@ -135,19 +114,15 @@ window.Portfolio.PROJECTS = {
     sections: [
       {
         heading: "Overview",
-        text: "A food-ordering system that connects customer, kitchen, and admin flows through web APIs — built to practise enterprise application integration.",
+        text: "A food-ordering system (SSHBites) connecting customer, kitchen, and admin flows through web APIs, built to practice enterprise application integration.",
       },
       {
         heading: "What it does",
         items: [
-          "Backend logic and data processing in ASP.NET Core Web API, documented and tested with Swagger.",
-          "Frontend in HTML, CSS, and JavaScript talking to those APIs.",
-          "Hosted the API on Render and the site on GitHub Pages.",
+          "Backend logic in ASP.NET Core Web API, documented and tested with Swagger.",
+          "Frontend in HTML/CSS/JS consuming those APIs.",
+          "Deployed live: API on Render, site on GitHub Pages.",
         ],
-      },
-      {
-        heading: "What I learned",
-        text: "Connecting frontend and backend over REST, building scalable ASP.NET APIs, and applying EAI ideas to a real restaurant-style workflow.",
       },
     ],
   },
@@ -155,23 +130,19 @@ window.Portfolio.PROJECTS = {
     kicker: "STAI · Inter-school · 2021",
     title: "Ebook App",
     tags: ["WordPress", "Android"],
-    videos: [{ src: "assets/projects/ebook-1.mov", label: "Ebook app walkthrough" }],
+    videos: [{ src: "assets/projects/ebook-1.mp4", label: "Ebook app walkthrough" }],
     sections: [
       {
         heading: "Overview",
-        text: "A digital library: reading, audiobooks, and requests to publish or add titles. WordPress (Astra) plus Android Studio.",
+        text: "A digital library app for reading, audiobooks, and publishing requests, built with WordPress (Astra theme) and Android Studio.",
       },
       {
         heading: "What it does",
         items: [
           "Users read books and listen to audiobooks.",
-          "Authors can send a book to admin for publishing.",
-          "Readers can request titles that are not in the library yet.",
+          "Authors can submit a book to admin for publishing.",
+          "Readers can request titles not yet in the library.",
         ],
-      },
-      {
-        heading: "What I learned",
-        text: "Responsive themes, plugins, content, and the unglamorous stack: GoDaddy, files, databases, SSL. Built for an inter-school Science, Technology, and Innovation event in 2021.",
       },
     ],
   },
@@ -183,18 +154,14 @@ window.Portfolio.PROJECTS = {
     sections: [
       {
         heading: "Overview",
-        text: "A website wireframe and WordPress build for restaurant IT services — POS, digital menus, surveillance — for Enbaar in Oman.",
+        text: "A website wireframe and WordPress build for restaurant IT services (POS, digital menus, surveillance) for Enbaar in Oman.",
       },
       {
         heading: "What it does",
         items: [
-          "Maps the services a restaurant actually buys, not a generic IT brochure.",
-          "Moves from Figma into a live WordPress page that presents the offer clearly.",
+          "Maps the actual services a restaurant buys",
+          "Moves from Figma wireframe into a live WordPress page.",
         ],
-      },
-      {
-        heading: "What I learned",
-        text: "Research first, then design. Company project with Enbaar.",
       },
     ],
   },

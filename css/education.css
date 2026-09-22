@@ -157,10 +157,11 @@
 
 .edu-cities {
   display: grid;
-  grid-template-columns: 0.78fr 1.22fr;
+  grid-template-columns: 1fr 1fr;
   gap: 16px;
   position: relative;
   z-index: 1;
+  align-items: stretch;
 }
 
 .edu-city {
@@ -171,6 +172,7 @@
   min-height: 280px;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 .edu-idx {
@@ -184,7 +186,7 @@
   position: absolute;
   right: -6px;
   bottom: -18px;
-    font-family: var(--font-display);
+  font-family: var(--font-display);
   font-weight: 800;
   font-size: clamp(80px, 12vw, 128px);
   letter-spacing: -0.08em;
@@ -205,11 +207,6 @@
   background: var(--black);
   color: var(--white);
   border: 1px solid var(--black);
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  grid-template-rows: auto 1fr;
-  gap: 12px;
-  align-items: end;
 }
 
 .edu-city-now .edu-idx,
@@ -225,39 +222,27 @@
   color: var(--white);
 }
 
-.edu-city-art {
-  width: 120px;
-  margin: 28px 0 20px;
-}
-
-.edu-city-art svg,
-.edu-city-art-lg svg {
-  width: 100%;
-  height: auto;
-}
-
-.edu-city-art-lg {
-  width: min(100%, 220px);
-  margin: 8px 0 0;
+.edu-city-now .edu-city-art {
   color: color-mix(in srgb, var(--white) 82%, transparent);
-  grid-row: 2;
 }
 
-.edu-city-now .edu-idx {
-  grid-column: 1 / -1;
+.edu-city-art {
+  width: 140px;
+  height: 96px;
+  margin: 20px 0 18px;
+  display: flex;
+  align-items: flex-end;
 }
 
-.edu-city-copy {
-  grid-column: 2;
-  grid-row: 2;
-  position: relative;
-  z-index: 1;
+.edu-city-art svg {
+  width: 100%;
+  height: 100%;
 }
 
 .edu-city h3 {
   font-size: clamp(24px, 3vw, 34px);
   margin: 8px 0 10px;
-  max-width: 12ch;
+  max-width: 14ch;
 }
 
 .edu-city p {
@@ -271,7 +256,8 @@
 }
 
 .edu-place {
-  margin-top: 12px;
+  margin-top: auto;
+  padding-top: 16px;
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.05em;
@@ -280,8 +266,6 @@
 
 .edu-city-origin .edu-place {
   color: var(--ink);
-  margin-top: auto;
-  padding-top: 16px;
 }
 
 .edu-city-now .edu-place {
@@ -299,7 +283,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-top: 16px;
+  margin-top: 12px;
 }
 
 .edu-chips li {
